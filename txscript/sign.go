@@ -317,57 +317,6 @@ func mergeMultiSig(tx *wire.MsgTx, idx int, addresses []btcutil.Address,
 	possibleSigs = extractSigs(sigPops, possibleSigs)
 	possibleSigs = extractSigs(prevPops, possibleSigs)
 
-	// Now we need to match the signatures to pubkeys, the only real way to
-	// do that is to try to verify them all and match it to the pubkey
-	// that verifies it. we then can go through the addresses in order
-	// to build our script. Anything that doesn't parse or doesn't verify we
-	// throw away.
-	addrToSig := make(map[string][]byte)
-sigLoop:
-	for _, sig := range possibleSigs {
-
-		// can't have a valid signature that doesn't at least have a
-		// hashtype, in practise it is even longer than this. but
-		// that'll be checked next.
-		if len(sig) < 1 {
-			continue
-		}
-		tSig := sig[:len(sig)-1]
-		hashType := SigHashType(sig[len(sig)-1])
-
-		pSig, err := btcec.ParseDERSignature(tSig, btcec.S256())
-		if err != nil {
-			continue
-		}
-
-		// We have to do this each round since hash types may vary
-		// between signatures and so the hash will vary. We can,
-		// however, assume no sigs etc are in the script since that
-		// would make the transaction nonstandard and thus not
-		// MultiSigTy, so we just need to hash the full thing.
-		hash := calcSignatureHash(pkPops, hashType, tx, idx)
-
-		for _, addr := range addresses {
-			// All multisig addresses should be pubkey addresses
-			// it is an error to call this internal function with
-			// bad input.
-			pkaddr := addr.(*btcutil.AddressPubKey)
-
-			pubKey := pkaddr.PubKey()
-
-			// If it matches we put it in the map. We only
-			// can take one signature per public key so if we
-			// already have one, we can throw this away.
-			if pSig.Verify(hash, pubKey) {
-				aStr := addr.EncodeAddress()
-				if _, ok := addrToSig[aStr]; !ok {
-					addrToSig[aStr] = sig
-				}
-				continue sigLoop
-			}
-		}
-	}
-
 	// Extra opcode to handle the extra arg consumed (due to previous bugs
 	// in the reference implementation).
 	builder := NewScriptBuilder().AddOp(OP_FALSE)
