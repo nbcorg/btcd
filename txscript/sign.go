@@ -288,11 +288,6 @@ func mergeScripts(chainParams *chaincfg.Params, tx *wire.MsgTx, idx int,
 func mergeMultiSig(tx *wire.MsgTx, idx int, addresses []btcutil.Address,
 	nRequired int, pkScript, sigScript, prevScript []byte) []byte {
 
-	// This is an internal only function and we already parsed this script
-	// as ok for multisig (this is how we got here), so if this fails then
-	// all assumptions are broken and who knows which way is up?
-	pkPops, _ := parseScript(pkScript)
-
 	sigPops, err := parseScript(sigScript)
 	if err != nil || len(sigPops) == 0 {
 		return prevScript
