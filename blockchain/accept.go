@@ -7,8 +7,8 @@ package blockchain
 import (
 	"fmt"
 
-	"github.com/martinboehm/btcd/database"
-	"github.com/martinboehm/btcutil"
+	"github.com/nbcorg/btcd/database"
+	"github.com/nbcorg/btcutil"
 )
 
 // maybeAcceptBlock potentially accepts a block into the block chain and, if

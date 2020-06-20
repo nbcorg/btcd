@@ -10,11 +10,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/martinboehm/btcd/chaincfg"
-	"github.com/martinboehm/btcd/database"
-	_ "github.com/martinboehm/btcd/database/ffldb"
-	"github.com/martinboehm/btcd/wire"
-	"github.com/martinboehm/btcutil"
+	"github.com/nbcorg/btcd/chaincfg"
+	"github.com/nbcorg/btcd/database"
+	_ "github.com/nbcorg/btcd/database/ffldb"
+	"github.com/nbcorg/btcd/wire"
+	"github.com/nbcorg/btcutil"
 )
 
 // This example demonstrates creating a new database.
@@ -22,8 +22,8 @@ func ExampleCreate() {
 	// This example assumes the ffldb driver is imported.
 	//
 	// import (
-	// 	"github.com/martinboehm/btcd/database"
-	// 	_ "github.com/martinboehm/btcd/database/ffldb"
+	// 	"github.com/nbcorg/btcd/database"
+	// 	_ "github.com/nbcorg/btcd/database/ffldb"
 	// )
 
 	// Create a database and schedule it to be closed and removed on exit.
@@ -48,8 +48,8 @@ func Example_basicUsage() {
 	// This example assumes the ffldb driver is imported.
 	//
 	// import (
-	// 	"github.com/martinboehm/btcd/database"
-	// 	_ "github.com/martinboehm/btcd/database/ffldb"
+	// 	"github.com/nbcorg/btcd/database"
+	// 	_ "github.com/nbcorg/btcd/database/ffldb"
 	// )
 
 	// Create a database and schedule it to be closed and removed on exit.
@@ -114,8 +114,8 @@ func Example_blockStorageAndRetrieval() {
 	// This example assumes the ffldb driver is imported.
 	//
 	// import (
-	// 	"github.com/martinboehm/btcd/database"
-	// 	_ "github.com/martinboehm/btcd/database/ffldb"
+	// 	"github.com/nbcorg/btcd/database"
+	// 	_ "github.com/nbcorg/btcd/database/ffldb"
 	// )
 
 	// Create a database and schedule it to be closed and removed on exit.

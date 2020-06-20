@@ -10,15 +10,15 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/martinboehm/btcd/blockchain"
-	"github.com/martinboehm/btcd/btcec"
-	"github.com/martinboehm/btcd/chaincfg"
-	"github.com/martinboehm/btcd/chaincfg/chainhash"
-	"github.com/martinboehm/btcd/rpcclient"
-	"github.com/martinboehm/btcd/txscript"
-	"github.com/martinboehm/btcd/wire"
-	"github.com/martinboehm/btcutil"
-	"github.com/martinboehm/btcutil/hdkeychain"
+	"github.com/nbcorg/btcd/blockchain"
+	"github.com/nbcorg/btcd/btcec"
+	"github.com/nbcorg/btcd/chaincfg"
+	"github.com/nbcorg/btcd/chaincfg/chainhash"
+	"github.com/nbcorg/btcd/rpcclient"
+	"github.com/nbcorg/btcd/txscript"
+	"github.com/nbcorg/btcd/wire"
+	"github.com/nbcorg/btcutil"
+	"github.com/nbcorg/btcutil/hdkeychain"
 )
 
 var (

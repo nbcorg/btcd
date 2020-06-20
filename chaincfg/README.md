@@ -24,8 +24,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/martinboehm/btcutil"
-	"github.com/martinboehm/btcd/chaincfg"
+	"github.com/nbcorg/btcutil"
+	"github.com/nbcorg/btcd/chaincfg"
 )
 
 var testnet = flag.Bool("testnet", false, "operate on the testnet Bitcoin network")
@@ -56,7 +56,7 @@ func main() {
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/martinboehm/btcd/chaincfg
+$ go get -u github.com/nbcorg/btcd/chaincfg
 ```
 
 ## GPG Verification Key

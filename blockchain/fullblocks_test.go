@@ -12,15 +12,15 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/martinboehm/btcd/blockchain"
-	"github.com/martinboehm/btcd/blockchain/fullblocktests"
-	"github.com/martinboehm/btcd/chaincfg"
-	"github.com/martinboehm/btcd/chaincfg/chainhash"
-	"github.com/martinboehm/btcd/database"
-	_ "github.com/martinboehm/btcd/database/ffldb"
-	"github.com/martinboehm/btcd/txscript"
-	"github.com/martinboehm/btcd/wire"
-	"github.com/martinboehm/btcutil"
+	"github.com/nbcorg/btcd/blockchain"
+	"github.com/nbcorg/btcd/blockchain/fullblocktests"
+	"github.com/nbcorg/btcd/chaincfg"
+	"github.com/nbcorg/btcd/chaincfg/chainhash"
+	"github.com/nbcorg/btcd/database"
+	_ "github.com/nbcorg/btcd/database/ffldb"
+	"github.com/nbcorg/btcd/txscript"
+	"github.com/nbcorg/btcd/wire"
+	"github.com/nbcorg/btcutil"
 )
 
 const (

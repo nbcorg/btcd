@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/martinboehm/btcd/chaincfg/chainhash"
+	"github.com/nbcorg/btcd/chaincfg/chainhash"
 )
 
 // MsgGetHeaders implements the Message interface and represents a bitcoin

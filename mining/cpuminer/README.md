@@ -16,7 +16,7 @@ now.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/martinboehm/btcd/mining/cpuminer
+$ go get -u github.com/nbcorg/btcd/mining/cpuminer
 ```
 
 ## License

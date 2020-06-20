@@ -10,9 +10,9 @@ import (
 	"net"
 	"time"
 
-	"github.com/martinboehm/btcd/chaincfg"
-	"github.com/martinboehm/btcd/peer"
-	"github.com/martinboehm/btcd/wire"
+	"github.com/nbcorg/btcd/chaincfg"
+	"github.com/nbcorg/btcd/peer"
+	"github.com/nbcorg/btcd/wire"
 )
 
 // mockRemotePeer creates a basic inbound peer listening on the simnet port for
