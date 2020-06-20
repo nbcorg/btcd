@@ -321,18 +321,6 @@ func mergeMultiSig(tx *wire.MsgTx, idx int, addresses []btcutil.Address,
 	// in the reference implementation).
 	builder := NewScriptBuilder().AddOp(OP_FALSE)
 	doneSigs := 0
-	// This assumes that addresses are in the same order as in the script.
-	for _, addr := range addresses {
-		sig, ok := addrToSig[addr.EncodeAddress()]
-		if !ok {
-			continue
-		}
-		builder.AddData(sig)
-		doneSigs++
-		if doneSigs == nRequired {
-			break
-		}
-	}
 
 	// padding for missing ones.
 	for i := doneSigs; i < nRequired; i++ {
