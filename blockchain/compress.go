@@ -213,7 +213,7 @@ func isScriptHash(script []byte) (bool, []byte) {
 func isPubKey(script []byte) (bool, []byte) {
 	// Pay-to-compressed-pubkey script.
 	if len(script) == 35 && script[0] == txscript.OP_DATA_33 &&
-		script[34] == txscript.OP_CHECKSIG && (script[1] == 0x02 ||
+		script[34] == txscript.OP_CHECKSIG && (/*script[1] == 0x02 ||*/
 		script[1] == 0x03) {
 
 		// Ensure the public key is valid.
@@ -224,6 +224,7 @@ func isPubKey(script []byte) (bool, []byte) {
 		}
 	}
 
+/*
 	// Pay-to-uncompressed-pubkey script.
 	if len(script) == 67 && script[0] == txscript.OP_DATA_65 &&
 		script[66] == txscript.OP_CHECKSIG && script[1] == 0x04 {
@@ -235,6 +236,7 @@ func isPubKey(script []byte) (bool, []byte) {
 			return true, serializedPubKey
 		}
 	}
+*/
 
 	return false, nil
 }
